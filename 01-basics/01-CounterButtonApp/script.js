@@ -1,5 +1,6 @@
 import { createApp } from './vendor/vue.esm-browser.js';
 
+let increase;
 createApp({
   data() {
     return {
@@ -7,7 +8,7 @@ createApp({
     };
   },
   methods: {
-    incrementCounter() {
+    increaseCounter() {
       this.counter++;
     },
   },

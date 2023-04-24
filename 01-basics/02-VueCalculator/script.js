@@ -3,24 +3,22 @@ import { createApp } from './vendor/vue.esm-browser.js';
 createApp({
   data() {
     return {
-      first: 1,
-      second: 2,
-      operator: `sum`,
+      a: 0,
+      b: 0,
+      operation: '',
     };
   },
   computed: {
     resultOfOperation() {
-      switch (this.operator) {
-        case `sum`:
-          return this.first + this.second;
-        case `subtract`:
-          return this.first - this.second;
-        case `multiply`:
-          return this.first * this.second;
-        case `divide`:
-          return this.first / this.second;
-        default:
-          return 'Error';
+      switch (this.operation) {
+        case 'plus':
+          return this.a + this.b;
+        case 'minus':
+          return this.a - this.b;
+        case 'multiply':
+          return this.a * this.b;
+        case 'divide':
+          return this.a / this.b;
       }
     },
   },

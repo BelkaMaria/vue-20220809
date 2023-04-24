@@ -16,8 +16,11 @@
         <div class="form-group">
           <input type="search" v-model="searchPhrase"/>
         </div>
-        <ul v-for="(email, index) in filteredEmails" :key="index">
-          <li :class="{marked: email.isMarked}">{{ email.name }}</li>
+        <ul>
+          <li v-for="email in filteredEmails"
+              :key="email.name"
+              :class="{marked: email.marked}"
+          >{{ email.name }}</li>
         </ul>
       </div>
     </div>

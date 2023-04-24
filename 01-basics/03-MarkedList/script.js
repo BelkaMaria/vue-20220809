@@ -33,14 +33,17 @@ createApp({
   data() {
     return {
       searchPhrase: ``,
+      emails: emails,
     };
   },
   computed: {
-    filteredEmails() {
-      return emails.map((name) => ({
-        name: name,
-        isMarked: this.searchPhrase && name.toLowerCase().includes(this.searchPhrase.toLowerCase()),
-      }));
+    filteredEmails: function() {
+      return this.emails.map((email) => {
+        return {
+          name: email,
+          marked: this.searchPhrase && email.toLowerCase().includes(this.searchPhrase.toLowerCase()),
+        };
+      });
     },
   },
 }).mount('#app');
